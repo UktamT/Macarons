@@ -1,0 +1,58 @@
+import React from 'react'
+import '../../styles/Header/headerMiddle.scss'
+import gis from '../../assets/Header/Vector (10).svg'
+import phone from '../../assets/Header/phone.svg'
+import bag from '../../assets/Header/bag.svg'
+import tg from '../../assets/Header/tg.svg'
+import vk from '../../assets/Header/vk.svg'
+import ok from '../../assets/Header/ok.svg'
+
+const HeaderMiddle = () => {
+  return (
+    <div className='headerMiddle'>
+      <div className="container">
+        <div className="headerMiddle__flex">
+          <ul className="headerMiddle__left">
+          <li className='headerMiddle__text'>
+            Гарантия свежести
+          </li>
+          <li className='headerMiddle__text'>
+            Доставка и оплата
+          </li>
+          <li className='headerMiddle__text'>
+            Оптовые поставки
+          </li>
+          <li className='headerMiddle__text'>
+            Контакты
+          </li>
+        </ul>
+        <div className='headerMiddle__right'>
+          <div className='headerMiddle__block'>
+            <img src={gis} alt="" />
+            <p className='headerMiddle__blockTitle'>Санкт-Петербург</p>
+          </div>
+
+          <div className='headerMiddle__block'>
+            <img src={phone} alt="" />
+            <p className='headerMiddle__blockTitle'>8 812 309-82-88</p>
+          </div>
+
+          <div className='headerMiddle__block'>
+            <img src={bag} alt="" />
+            <p className='headerMiddle__blockTitle'>В корзине (4 товара)</p>
+          </div>
+
+          <div className='headerMiddle__socials'>
+            <img src={tg} alt="" />
+            <img src={vk} alt="" />
+            <img src={ok} alt="" />
+          </div>
+        </div>
+        </div>
+        
+      </div>
+    </div>
+  )
+}
+
+export default HeaderMiddle

@@ -1,0 +1,50 @@
+.headerMiddle{
+  background-color: rgba(247, 235, 229, 1);
+  padding: 20px 0;
+
+  &__left{
+    display: flex;
+    align-items: center;
+    gap: 20px;
+  }
+
+  &__text{
+    color: rgba(0, 0, 0, 0.79);
+    font-size: 13px;
+    font-weight: 400;
+    line-height: 17px;
+    letter-spacing: 0%;
+  }
+
+  &__flex{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  &__right{
+    display: flex;
+    align-items: center;
+    gap: 20px;
+  }
+
+  &__block{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+
+  &__blockTitle{
+    color: rgba(0, 0, 0, 0.88);
+    font-size: 12px;
+    font-weight: 400;
+    line-height: 17px;
+    letter-spacing: 0%;
+  }
+
+  &__socials{
+    display: flex;
+    align-items: center;
+    gap: 15px;
+  }
+}

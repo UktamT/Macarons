@@ -1,0 +1,31 @@
+.headerBottom {
+  padding: 20px 0;
+  background-color: white;
+  margin-bottom: 40px;
+
+  &__flex {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    justify-content: center;
+  }
+
+  &__title {
+    color: rgba(43, 20, 20, 1);
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 17px;
+    text-transform: uppercase;
+  }
+  
+  &__span {
+    background: rgba(231, 66, 106, 1);
+    color: white;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+}

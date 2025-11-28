@@ -1,0 +1,11 @@
+.headerTop{
+  background: rgba(212, 233, 249, 1);
+  padding: 15px 0;
+
+  &__flex{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 40px;
+  }
+}

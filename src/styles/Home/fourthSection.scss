@@ -1,0 +1,103 @@
+.fourthSection{
+  &__kit{
+    width: 370px;
+  }
+  &__title{
+    text-align: center;
+    color: var(--#292929, rgba(41, 41, 41, 1));
+    font-size: 30px;
+    font-weight: 600;
+    line-height: 37px;
+    letter-spacing: 0%;
+    padding: 108px 0 42px;
+  }
+
+  &__name{
+    color: var(--#292929, rgba(41, 41, 41, 1));
+    font-size: 18px;
+    font-weight: 600;
+    line-height: 22px;
+    letter-spacing: 0%;
+    text-align: left;
+    padding: 20px 0 14px 20px;
+  }
+
+  &__subtitle{
+    color: var(--#292929, rgba(41, 41, 41, 1));
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 17px;
+    letter-spacing: 0%;
+    padding-left: 20px;
+  }
+
+  &__kitBottom{
+    border: 1px solid rgba(237, 237, 240, 1);
+    border-radius: 0 0 5px 5px;
+    background: rgba(255, 255, 255, 1);
+    position: relative;
+    top: -5px;
+  }
+  
+  &__line{
+    border-bottom: 1px solid rgba(237, 237, 240, 1);
+    padding: 20px 0 0;
+  }
+
+  &__information{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 20px;
+  }
+
+  &__price{
+    color: rgba(231, 66, 106, 1);
+    font-size: 18px;
+    font-weight: 600;
+    line-height: 22px;
+    letter-spacing: 0%;
+}
+  &__cart{
+    border: none;
+    border-left: 1px solid rgba(237, 237, 240, 1);
+    display: flex;
+    align-items: center;
+    background: none;
+    color: rgba(0, 0, 0, 0.88);
+    font-size: 14px;
+    font-weight: 600;
+    line-height: 17px;
+    letter-spacing: 0%;
+    gap: 10px;
+    height: 50px;
+    padding-left: 10px;
+    cursor: pointer;
+}
+
+&__kits{
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 28px;
+  row-gap: 35px;
+}
+
+&__more{
+  color: rgba(0, 0, 0, 1);
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 17px;
+  letter-spacing: 0%;
+  background-color: transparent;
+  border: 1px solid rgba(78, 157, 211, 1);
+  border-radius: 3px;
+  padding: 17px 49px 18px;
+  cursor: pointer;
+  margin: 0 auto;
+  display: block;
+}
+&__auto{
+  margin: 35px 0 85px;
+}
+}

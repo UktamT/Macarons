@@ -1,0 +1,35 @@
+.thirdSection{
+  &__card{
+    max-width: 270px;
+  }
+
+  &__subtitle{
+    position: relative;
+    top: -10px;
+    padding: 20px 0;
+    border-radius: 0px 0px 5px 5px;
+    background: rgba(140, 196, 236, 1);
+    color: rgba(255, 255, 255, 1);
+    font-size: 16px;
+    font-weight: 600;
+    line-height: 100%;
+    letter-spacing: 0%;
+    text-align: center;
+  }
+
+  &__cards{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 29px;
+  }
+
+  &__title{
+    text-align: center;
+    color: var(--#292929, rgba(41, 41, 41, 1));
+    font-size: 30px;
+    font-weight: 600;
+    line-height: 37px;
+    letter-spacing: 0%;
+    padding: 94px 0 50px;
+  }
+}
