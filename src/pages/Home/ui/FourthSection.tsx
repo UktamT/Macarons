@@ -1,11 +1,19 @@
-import React from 'react'
-import image from '../../../assets/Home/Rectangle 172 (1).png'
 import cart from '../../../assets/Header/bag.svg'
-import { Link } from 'react-router-dom'
-
+import image1 from '../../../assets/Home/Rectangle 172 (1).png'
+import image2 from '../../../assets/Home/Rectangle 174.png'
 import '../../../styles/Home/fourthSection.scss'
+import { usePopularProducts } from '../../../entities/product/hooks/usePopularProducts'
+import { useCartStore } from '../../../features/cart/model/cartStore'
+
 
 const FourthSection = () => {
+  const {products, loading, error} = usePopularProducts();
+  const addToCart = useCartStore((state) => state.addToCart);
+  const images = {image1, image2};
+  
+  if(loading) return <p>падажди баля, загрузка</p>
+  if(error) return <p>Ошибка: {error.message}</p>
+  
   return (
     <section className='fourthSection'>
       <div className="container">
@@ -14,18 +22,19 @@ const FourthSection = () => {
         </h4>
 
         <div className='fourthSection__kits'>
-          <div className="fourthSection__kit">
-            <img src={image} alt="" />
+          {products.map((p) => (
+            <div key={p.id} className="fourthSection__kit">
+            <img src={images[p.image]} alt="" />
             <div className="fourthSection__kitBottom">
               <div className="fourthSection__bottomText">
-                <h5 className='fourthSection__name'>Сердце</h5>
-                <p className='fourthSection__subtitle'>24 штуки в коробке в виде сердца. <br />Ассорти из 6 вкусов </p>
+                <h5 className='fourthSection__name'>{p.title}</h5>
+                <p className='fourthSection__subtitle'>{p.subtitle} </p>
                 <div className="fourthSection__line"></div>
 
                 <div className='fourthSection__information'>
-                  <p className='fourthSection__price'>7500 руб</p>
+                  <p className='fourthSection__price'>{p.price} руб</p>
 
-                  <button className="fourthSection__cart">
+                  <button onClick={() => addToCart(p)} className="fourthSection__cart">
                     <img src={cart} alt="" />
                     В корзину
                   </button>
@@ -33,104 +42,7 @@ const FourthSection = () => {
               </div>       
             </div>
           </div>
-          <Link to={'/item'}>
-          <div className="fourthSection__kit">
-            <img src={image} alt="" />
-            <div className="fourthSection__kitBottom">
-              <div className="fourthSection__bottomText">
-                <h5 className='fourthSection__name'>Сердце</h5>
-                <p className='fourthSection__subtitle'>24 штуки в коробке в виде сердца. <br />Ассорти из 6 вкусов </p>
-                <div className="fourthSection__line"></div>
-
-                <div className='fourthSection__information'>
-                  <p className='fourthSection__price'>7500 руб</p>
-
-                  <button className="fourthSection__cart">
-                    <img src={cart} alt="" />
-                    В корзину
-                  </button>
-                </div>
-              </div>       
-            </div>
-          </div>
-          </Link>
-          
-          <div className="fourthSection__kit">
-            <img src={image} alt="" />
-            <div className="fourthSection__kitBottom">
-              <div className="fourthSection__bottomText">
-                <h5 className='fourthSection__name'>Сердце</h5>
-                <p className='fourthSection__subtitle'>24 штуки в коробке в виде сердца. <br />Ассорти из 6 вкусов </p>
-                <div className="fourthSection__line"></div>
-
-                <div className='fourthSection__information'>
-                  <p className='fourthSection__price'>7500 руб</p>
-
-                  <button className="fourthSection__cart">
-                    <img src={cart} alt="" />
-                    В корзину
-                  </button>
-                </div>
-              </div>       
-            </div>
-          </div>
-          <div className="fourthSection__kit">
-            <img src={image} alt="" />
-            <div className="fourthSection__kitBottom">
-              <div className="fourthSection__bottomText">
-                <h5 className='fourthSection__name'>Сердце</h5>
-                <p className='fourthSection__subtitle'>24 штуки в коробке в виде сердца. <br />Ассорти из 6 вкусов </p>
-                <div className="fourthSection__line"></div>
-
-                <div className='fourthSection__information'>
-                  <p className='fourthSection__price'>7500 руб</p>
-
-                  <button className="fourthSection__cart">
-                    <img src={cart} alt="" />
-                    В корзину
-                  </button>
-                </div>
-              </div>       
-            </div>
-          </div>
-          <div className="fourthSection__kit">
-            <img src={image} alt="" />
-            <div className="fourthSection__kitBottom">
-              <div className="fourthSection__bottomText">
-                <h5 className='fourthSection__name'>Сердце</h5>
-                <p className='fourthSection__subtitle'>24 штуки в коробке в виде сердца. <br />Ассорти из 6 вкусов </p>
-                <div className="fourthSection__line"></div>
-
-                <div className='fourthSection__information'>
-                  <p className='fourthSection__price'>7500 руб</p>
-
-                  <button className="fourthSection__cart">
-                    <img src={cart} alt="" />
-                    В корзину
-                  </button>
-                </div>
-              </div>       
-            </div>
-          </div>
-          <div className="fourthSection__kit">
-            <img src={image} alt="" />
-            <div className="fourthSection__kitBottom">
-              <div className="fourthSection__bottomText">
-                <h5 className='fourthSection__name'>Сердце</h5>
-                <p className='fourthSection__subtitle'>24 штуки в коробке в виде сердца. <br />Ассорти из 6 вкусов </p>
-                <div className="fourthSection__line"></div>
-
-                <div className='fourthSection__information'>
-                  <p className='fourthSection__price'>7500 руб</p>
-
-                  <button className="fourthSection__cart">
-                    <img src={cart} alt="" />
-                    В корзину
-                  </button>
-                </div>
-              </div>       
-            </div>
-          </div>
+          ))}
         </div>
 
       <div className="fourthSection__auto">

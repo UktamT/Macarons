@@ -7,6 +7,8 @@ import tg from '../../assets/Header/tg.svg'
 import vk from '../../assets/Header/vk.svg'
 import ok from '../../assets/Header/ok.svg'
 
+import { Link } from 'react-router-dom'
+
 const HeaderMiddle = () => {
   return (
     <div className='headerMiddle'>
@@ -39,7 +41,10 @@ const HeaderMiddle = () => {
 
           <div className='headerMiddle__block'>
             <img src={bag} alt="" />
-            <p className='headerMiddle__blockTitle'>В корзине (4 товара)</p>
+            <Link to={'/cart'}>
+              <p className='headerMiddle__blockTitle'>В корзине (4 товара)</p>
+            </Link>
+            
           </div>
 
           <div className='headerMiddle__socials'>
