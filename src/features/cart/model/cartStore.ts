@@ -36,13 +36,22 @@ export const useCartStore = create<CartStore>((set) => ({
   },
 
   decreaseQuantity: (productId: number) => {
-    set((state) => ({
-      state: state.state.map((item) =>
-        item.id === productId && item.quantity > 1
-          ? { ...item, quantity: item.quantity - 1 }
-          : item
-      ),
-    }));
+    set((state) => {
+      const exist = state.state.find((item) => item.id === productId);
+      if (!exist) return state;
+
+      if (exist.quantity === 1) {
+        return {
+          state: state.state.filter((item) => item.id !== productId),
+        };
+      }
+
+      return {
+        state: state.state.map((item) =>
+          item.id === productId ? { ...item, quantity: item.quantity - 1 } : item
+        ),
+      };
+    });
   },
 
   removeFromCart: (id: number) => {

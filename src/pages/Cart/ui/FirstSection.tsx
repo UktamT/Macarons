@@ -1,7 +1,11 @@
-import React from 'react'
 import '../../../styles/Cart/firstSection.scss'
+import CartListItem from './cartListItem'
+import { useCartStore } from '../../../features/cart/model/cartStore'
+import EmptyCart from './EmptyCart'
 
 const FirstSection = () => {
+  const cartItems = useCartStore((state) => state.state)
+
   return (
     <section className='firstSection'>
       <div className="container">
@@ -9,10 +13,12 @@ const FirstSection = () => {
 
         <h2 className='firstSection__title'>Ваша Корзина</h2>
 
-        <p className='firstSection__countPrice'>3 товара / 1030 руб.</p>
-
-
         <div className="firstSection__content">
+          {
+            cartItems.length > 0 ? 
+            <CartListItem />
+            : <EmptyCart/>
+          }
           
         </div>
       </div>

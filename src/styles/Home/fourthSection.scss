@@ -1,6 +1,12 @@
 .fourthSection{
   &__kit{
     width: 370px;
+    cursor: pointer;
+    transition: all ease-in-out 0.3s;
+  }
+  &__kit:hover{
+    transform: translateY(-10px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
   }
   &__title{
     text-align: center;
@@ -36,7 +42,6 @@
     border-radius: 0 0 5px 5px;
     background: rgba(255, 255, 255, 1);
     position: relative;
-    top: -5px;
   }
   
   &__line{
@@ -100,5 +105,8 @@
 &__auto{
   margin: 35px 0 85px;
 }
-
+&__cartImage{
+  width: 20px;
+  height: 20px;
+}
 }

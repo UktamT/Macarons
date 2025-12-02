@@ -1,0 +1,26 @@
+.empty{
+  &__content{
+    cursor: pointer;
+    background: white;
+    width: 800px;
+    margin: 0 auto;
+    text-align: center;
+    border: 1px solid rgba(237, 237, 240, 1);
+    border-radius: 10px;
+    height: 300px;
+    transition: all ease-in-out 0.3s;
+  }
+
+  &__title{
+    font-size: 40px;
+    font-weight: 600;
+  }
+  &__image{
+    width: 200px;
+    height: 200px;
+  }
+  &__content:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+  }
+}

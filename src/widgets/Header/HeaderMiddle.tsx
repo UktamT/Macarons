@@ -6,10 +6,13 @@ import bag from '../../assets/Header/bag.svg'
 import tg from '../../assets/Header/tg.svg'
 import vk from '../../assets/Header/vk.svg'
 import ok from '../../assets/Header/ok.svg'
+import { useCartStore } from '../../features/cart/model/cartStore'
 
 import { Link } from 'react-router-dom'
 
 const HeaderMiddle = () => {
+  const cartItems = useCartStore((state) => state.state)
+
   return (
     <div className='headerMiddle'>
       <div className="container">
@@ -38,14 +41,16 @@ const HeaderMiddle = () => {
             <img src={phone} alt="" />
             <p className='headerMiddle__blockTitle'>8 812 309-82-88</p>
           </div>
-
-          <div className='headerMiddle__block'>
-            <img src={bag} alt="" />
             <Link to={'/cart'}>
-              <p className='headerMiddle__blockTitle'>В корзине (4 товара)</p>
+              <div className='headerMiddle__block'>
+                <img src={bag} alt="" />
+            
+                <p className='headerMiddle__countSecond'>{cartItems.length}</p>
+                <p className='headerMiddle__blockTitle'>В корзине ({cartItems.length} товаров)</p>
+              </div>
             </Link>
             
-          </div>
+          
 
           <div className='headerMiddle__socials'>
             <img src={tg} alt="" />
