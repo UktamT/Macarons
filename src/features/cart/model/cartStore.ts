@@ -4,7 +4,7 @@ import type { Product } from "../../../entities/product/types/product";
 
 type CartStore = CartState & CartActions;
 
-export const useCartStore = create<CartStore>((set) => ({
+export const useCartStore = create<CartStore>((set, get) => ({
   state: [],
 
   addToCart: (product: Product, quantity = 1) => {
@@ -63,4 +63,9 @@ export const useCartStore = create<CartStore>((set) => ({
   clearCart: () => {
     set({ state: [] });
   },
+
+  totalPrice: () => {
+    const totalPriceState = get().state;
+    return totalPriceState.reduce((acc, item) => acc + item.price * item.quantity, 0)
+},
 }));

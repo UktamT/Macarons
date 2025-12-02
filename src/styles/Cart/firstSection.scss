@@ -1,4 +1,8 @@
 .firstSection{
+  &__flex{
+    display: flex;
+    gap: 30px;
+  }
   &__navigate{
     text-align: center;
     font-size: 14px;

@@ -1,5 +1,6 @@
 import '../../../styles/Cart/firstSection.scss'
 import CartListItem from './cartListItem'
+import CartTotal from './cartTotal'
 import { useCartStore } from '../../../features/cart/model/cartStore'
 import EmptyCart from './EmptyCart'
 
@@ -16,7 +17,11 @@ const FirstSection = () => {
         <div className="firstSection__content">
           {
             cartItems.length > 0 ? 
+            <div className='firstSection__flex'>
             <CartListItem />
+            <CartTotal/>
+            </div>
+            
             : <EmptyCart/>
           }
           

@@ -1,0 +1,34 @@
+.cartTotal{
+  background-color: white;
+  width: 100%;
+  &__title{
+    padding: 30px 30px 20px;
+    color: var(--#292929, rgba(41, 41, 41, 1));
+    font-size: 18px;
+    font-weight: 600;
+    line-height: 22px;
+    letter-spacing: 0%;
+    text-align: left;
+  }
+
+  &__totalItemPrice{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-size: 17px;
+    font-weight: 600;
+    line-height: 17px;
+    letter-spacing: 0%;
+    color: rgba(231, 66, 106, 1);
+    border-top: 1px solid  rgba(237, 237, 240, 1);
+    border-bottom: 1px solid  rgba(237, 237, 240, 1);
+    padding: 15px 30px;
+  }
+  &__span{
+    color: rgba(41, 41, 41, 1);
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 22px;
+    letter-spacing: 0%;
+  }
+}

@@ -19,4 +19,5 @@ export interface CartActions {
   decreaseQuantity: (productId: number) => void;
   removeFromCart: (id: number) => void,
   clearCart: () => void,
+  totalPrice: () => number,
 }
