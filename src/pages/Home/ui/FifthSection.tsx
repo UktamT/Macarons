@@ -1,7 +1,7 @@
 import React from 'react'
 import '../../../styles/Home/fifthSection.scss'
 
-import image from '../../../assets/Home/Rectangle 282.png'
+import image from '../../../shared/assets/Home/Rectangle 282.png'
 
 const FifthSection = () => {
   return (

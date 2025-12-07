@@ -1,8 +1,9 @@
 import '../../../styles/Cart/cartListItem.scss'
 import { useCartStore } from '../../../features/cart/model/cartStore'
-import image1 from '../../../assets/Home/Rectangle 172 (1).png'
-import image2 from '../../../assets/Home/Rectangle 174.png'
-import close from '../../../assets/Cart/Vector (14).svg'
+import image1 from '../../../shared/assets/Home/Rectangle 172 (1).png'
+import image2 from '../../../shared/assets/Home/Rectangle 174.png'
+import image3 from '../../../shared/assets/Home/Rectangle 176.png'
+import close from '../../../shared/assets/Cart/Vector (14).svg'
 
 
 const CartListItem = () => {
@@ -10,7 +11,7 @@ const CartListItem = () => {
   const dec = useCartStore((state) => state.decreaseQuantity)
   const inc = useCartStore((state) => state.increaseQuantity)
   const del = useCartStore((state) => state.removeFromCart)
-  const images: Record<string, string> = {image1, image2};
+  const images: Record<string, string> = {image1, image2, image3};
 
   return (
     <div className='cartListItem'>

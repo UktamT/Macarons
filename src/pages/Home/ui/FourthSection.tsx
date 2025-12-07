@@ -1,17 +1,19 @@
-import cart from '../../../assets/Header/bag.svg'
-import image1 from '../../../assets/Home/Rectangle 172 (1).png'
-import image2 from '../../../assets/Home/Rectangle 174.png'
+import cart from '../../../shared/assets/Header/bag.svg'
+import image1 from '../../../shared/assets/Home/Rectangle 172 (1).png'
+import image2 from '../../../shared/assets/Home/Rectangle 174.png'
+import image3 from '../../../shared/assets/Home/Rectangle 176.png'
 import '../../../styles/Home/fourthSection.scss'
 import { usePopularProducts } from '../../../entities/product/hooks/usePopularProducts'
 import { useCartStore } from '../../../features/cart/model/cartStore'
-import checked from '../../../assets/Home/free-icon-check-14090371.png'
+import checked from '../../../shared/assets/Home/free-icon-check-14090371.png'
+import { Link } from 'react-router-dom'
 
 
 const FourthSection = () => {
   const {products, loading, error} = usePopularProducts();
   const addToCart = useCartStore((state) => state.addToCart);
   const cartItems = useCartStore((state) => state.state);
-  const images: Record<string, string> = {image1, image2};
+  const images: Record<string, string> = {image1, image2, image3};
   
   if(loading) return <p>падажди баля, загрузка</p>
   if(error) return <p>Ошибка: {error.message}</p>
@@ -27,8 +29,9 @@ const FourthSection = () => {
 
         <div className='fourthSection__kits'>
           {products.map((p) => (
-            
-            <div key={p.id} className="fourthSection__kit">
+          
+
+          <Link to={`/itempage/${p.id}`} key={p.id} className="fourthSection__kit">
             <img src={images[p.image] || image1} alt="" />
             <div className="fourthSection__kitBottom">
               <div className="fourthSection__bottomText">
@@ -39,7 +42,11 @@ const FourthSection = () => {
                 <div className='fourthSection__information'>
                   <p className='fourthSection__price'>{p.price} руб</p>
                   <button
-                    onClick={() => addToCart(p)}
+                    onClick={(e) => {
+                      e.preventDefault();
+                      e.stopPropagation();
+                      addToCart(p);
+                    }}
                     className="fourthSection__cart">
                     <img className='fourthSection__cartImage' src={cartItems.find((i) => p.id === i.id) ? checked : cart} alt="" />
 
@@ -54,7 +61,7 @@ const FourthSection = () => {
                 </div>
               </div>       
             </div>
-          </div>
+          </Link>
           ))}
         </div>
 

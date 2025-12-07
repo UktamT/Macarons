@@ -1,10 +1,9 @@
-import React from 'react'
 import Card from '../../../shared/ui/Card'
 import '../../../styles/Home/SecondSection.scss'
-import puncake from '../../../assets/Home/Group 122.svg'
-import burger from '../../../assets/Home/Group 125.svg'
-import light from '../../../assets/Home/Group 124.svg'
-import cake from '../../../assets/Home/Group 123.svg'
+import puncake from '../../../shared/assets/Home/Group 122.svg'
+import burger from '../../../shared/assets/Home/Group 125.svg'
+import light from '../../../shared/assets/Home/Group 124.svg'
+import cake from '../../../shared/assets/Home/Group 123.svg'
 
 const SecondSection = () => {
   return (

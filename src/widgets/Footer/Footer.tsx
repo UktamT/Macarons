@@ -1,12 +1,10 @@
-import React from 'react'
 import '../../styles/Footer/footer.scss'
-
-import image from '../../assets/Footer/Frame.svg'
-import secondImage from '../../assets/Footer/Group 18.svg'
-import thirdImage from '../../assets/Footer/Vector (12).svg'
-import instagramm from '../../assets/Footer/Group 27.svg'
-import facebook from '../../assets/Footer/Group 28.svg'
-import vk from '../../assets/Footer/Group 29.svg'
+import image from '../../shared/assets/Footer/Frame.svg'
+import secondImage from '../../shared/assets/Footer/Group 18.svg'
+import thirdImage from '../../shared/assets/Footer/Vector (12).svg'
+import instagramm from '../../shared/assets/Footer/Group 27.svg'
+import facebook from '../../shared/assets/Footer/Group 28.svg'
+import vk from '../../shared/assets/Footer/Group 29.svg'
 
 const Footer = () => {
   return (

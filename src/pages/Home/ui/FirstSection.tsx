@@ -1,8 +1,9 @@
 import React from 'react'
 import '../../../styles/Home/firstSection.scss'
-import logo from '../../../assets/Home/Слой 0 1.svg'
+import logo from '../../../shared/assets/Home/Слой 0 1.svg'
 
-const HomePage = () => {
+const FirstSection = () => {
+
   return (
     <section className='macaronShop'>
       <div className="container">
@@ -26,4 +27,4 @@ const HomePage = () => {
   )
 }
 
-export default HomePage
+export default FirstSection

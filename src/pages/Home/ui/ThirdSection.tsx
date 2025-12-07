@@ -1,5 +1,4 @@
-import React from 'react'
-import image from '../../../assets/Home/Rectangle 172.png'
+import image from '../../../shared/assets/Home/Rectangle 172.png'
 import '../../../styles/Home/thirdSection.scss'
 
 const ThirdSection = () => {

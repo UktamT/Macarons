@@ -1,9 +1,14 @@
-import React from 'react'
 import '../../styles/Home/SecondSection.scss'
-import logo from '../../assets/Home/Group 125.svg'
-import right from '../../assets/Home/Vector (11).svg'
+import right from '../assets/Home/Vector (11).svg'
 
-const Card = ({title, subtitle, color, image}) => {
+interface propsType {
+  title: string;
+  subtitle: string;
+  color: string;
+  image: string;
+}
+
+const Card = ({title, subtitle, color, image}: propsType) => {
   return (
     <div className={color}>
       <div>
