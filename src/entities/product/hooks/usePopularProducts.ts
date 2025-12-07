@@ -1,9 +1,9 @@
 import { useEffect, useState } from "react";
-import { getProducts, type ApiError } from "../api/getProducts";
+import { getProductsUnLimited, getProducts, type ApiError } from "../api/getProducts";
 import type { Product } from "../types/product";
 
 
-export const usePopularProducts = () => {
+export const usePopularProducts = (limit = false) => {
   const [products, setProducts] = useState<Product[]>([])
   const [loading, setLoading] = useState(true)
   const [error, setError] = useState<ApiError | null>(null)
@@ -12,7 +12,7 @@ export const usePopularProducts = () => {
   useEffect(() => {
     const fetchProduct = async () => {
       try {
-        const data = await getProducts();
+        const data = limit ? await getProducts() : await getProductsUnLimited();
         setProducts(data);
       } catch (err) {
         setError(err as ApiError)

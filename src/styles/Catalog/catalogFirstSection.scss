@@ -1,0 +1,114 @@
+.catalogFirstSection{
+  &__card{
+    position: relative;
+    background: #FEB0E1;
+    display: flex;
+    justify-content: space-between;
+    padding: 0;
+    height: 385px;
+  }
+  &__firstImage{
+    position: absolute;
+    top: -24px;
+    left: -24px;
+  }
+  &__cardText{
+    margin: 95px 0 0 550px;
+  }
+  &__title{
+    color: rgba(41, 41, 41, 1);
+    font-size: 30px;
+    font-weight: 600;
+    line-height: 37px;
+    letter-spacing: 0%;
+    text-align: center;
+    padding: 0;
+  }
+  &__subtitle{
+    color: rgba(41, 41, 41, 1);
+    font-size: 18px;
+    width: 600px;
+    font-weight: 400;
+    line-height: 22px;
+    letter-spacing: 0%;
+    text-align: center;
+    padding: 17px 0 42px;
+  }
+  &__btn{
+    background: transparent;
+    border: 1px solid rgba(78, 157, 211, 1);
+    border-radius: 3px;
+    color: black;
+    padding: 16px 52px;
+    font-size: 14px;
+    font-weight: 600;
+    line-height: 17px;
+    letter-spacing: 0%;
+    cursor: pointer;
+  }
+  &__btns{
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    justify-content: center;
+  }
+  &__cardBlock{
+    border-radius: 5px;
+    background: rgba(255, 184, 78, 1);
+    width: 369px;
+    height: 341px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: flex-end;
+    cursor: pointer;
+  }
+  &__cardBlockTitle{
+    color: rgba(255, 255, 255, 1);
+    font-size: 18px;
+    font-weight: 600;
+    line-height: 22px;
+    letter-spacing: 0%;
+    text-align: center;
+    padding-bottom: 30px;
+  }
+  &__cardBlockImage{
+    margin: 0 auto;
+    display: block;
+  }
+  &__content{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+  }
+  &__navigate{
+    display: flex;
+    justify-content: center;
+  }
+  &__main{
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 17px;
+    letter-spacing: 0%;
+    color: rgb(167, 167, 167);
+    cursor: pointer;
+  }
+
+  &__desert{
+    color: rgba(78, 157, 211, 1);
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 17px;
+    letter-spacing: 0%;
+  }
+
+  &__catalog{
+    color: rgba(41, 41, 41, 1);
+    font-size: 30px;
+    font-weight: 600;
+    line-height: 37px;
+    letter-spacing: 0%;
+    text-align: center;
+    padding: 11px 0 30px;
+  }
+}

@@ -9,6 +9,22 @@ export interface ApiError {
 
 export const getProducts = async (): Promise<Product[]> => {
   try {
+    const response = await api.get<Product[]>("/products?_limit=3");
+    return response.data;
+  } catch (error) {
+    const axiosError = error as AxiosError<{ message?: string }>;
+    
+    const apiError: ApiError = {
+      message: axiosError.response?.data?.message || axiosError.message || "Ошибка при загрузке продуктов",
+      status: axiosError.response?.status,
+    };
+    
+    throw apiError;
+  }
+};
+
+export const getProductsUnLimited = async (): Promise<Product[]> => {
+  try {
     const response = await api.get<Product[]>("/products");
     return response.data;
   } catch (error) {
@@ -22,3 +38,4 @@ export const getProducts = async (): Promise<Product[]> => {
     throw apiError;
   }
 };
+

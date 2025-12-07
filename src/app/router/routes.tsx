@@ -1,8 +1,8 @@
 import { ReactNode } from "react";
 import Home from "../../pages/Home/Home";
-import ItemCard from "../../pages/ItemCard/ItemCard";
 import Cart from "../../pages/Cart/Cart";
 import ItemPages from "../../pages/ItemPage/ItemPages";
+import Catalog from "../../pages/Catalog/Catalog";
 
 export interface AppRoute {
   path: string;
@@ -11,7 +11,7 @@ export interface AppRoute {
 
 export const routes: AppRoute[] = [
   { path: "/", element: <Home/> },
-  { path: "/item", element: <ItemCard/>},
   { path: "/cart", element: <Cart/>},
-  { path: "/itempage/:id", element: <ItemPages/>}
+  { path: "/itempage/:id", element: <ItemPages/>},
+  { path: "catalog", element: <Catalog/>}
 ];
