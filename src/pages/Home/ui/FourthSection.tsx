@@ -1,6 +1,6 @@
 import '../../../styles/Home/fourthSection.scss'
 import { usePopularProducts } from '../../../entities/product/hooks/usePopularProducts'
-import CardSection from '../../../entities/card/Card';
+import Card from '../../../entities/card/Card';
 
 
 
@@ -20,7 +20,7 @@ const FourthSection = () => {
           Популярные наборы
         </h4>
 
-      <CardSection/>
+      <Card limit={true}/>
 
       <div className="fourthSection__auto">
         <button className="fourthSection__more">

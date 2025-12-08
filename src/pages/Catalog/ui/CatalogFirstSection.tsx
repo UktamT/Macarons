@@ -30,9 +30,13 @@ const CatalogFirstSection = () => {
             </p>
 
             <div className="catalogFirstSection__btns">
-              <button className="catalogFirstSection__btn">
-                Готовые наборы
-              </button>
+              <Link to={'/readyKits'}>
+                <button className="catalogFirstSection__btn">
+                  Готовые наборы
+                </button>
+              
+              </Link>
+              
               <button className="catalogFirstSection__btn">
                 Собрать свой набор
               </button>

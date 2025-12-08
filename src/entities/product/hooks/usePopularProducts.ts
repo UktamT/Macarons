@@ -23,7 +23,7 @@ export const usePopularProducts = (limit = false) => {
     };
 
     fetchProduct()
-  }, [])
+  }, [limit])
 
   return { products, loading, error} as const;
 }

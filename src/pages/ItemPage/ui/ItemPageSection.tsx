@@ -23,7 +23,7 @@ export const ItemPageSection = () => {
     <div className='itemPageSection'>
       <div className="itemPageSection__navigate">
         <Link to={'/'} className='itemPageSection__nav'>Главная  {">"}</Link>
-        <p className='itemPageSection__nav'>Готовые Наборы  {">"}</p> 
+        <Link to={'/readyKits'} className='itemPageSection__nav'>Готовые Наборы  {">"}</Link> 
         <p className='itemPageSection__navHover'>{products?.title}</p>
       </div>
 

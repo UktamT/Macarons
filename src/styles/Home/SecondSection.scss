@@ -5,6 +5,8 @@
   max-width: 570px;
   height: 260px;
   width: 100%;
+  transition: all ease-in-out 0.3s;
+  cursor: pointer;
 
   &::before {
     content: "";
@@ -46,7 +48,7 @@
 
   &::before {
     background: #ffe3d7;
-    clip-path: polygon(100% 0, 0 100%, 0 0); // правый верх → низ
+    clip-path: polygon(100% 0, 0 100%, 0 0);
   }
 }
 
@@ -56,7 +58,7 @@
 
   &::before {
     background: #ffe4f1;
-    clip-path: polygon(0 0, 100% 100%, 100% 0); // левый верх → низ
+    clip-path: polygon(0 0, 100% 100%, 100% 0);
   }
 }
 
@@ -66,7 +68,7 @@
 
   &::before {
     background: rgb(204, 248, 204);
-    clip-path: polygon(0 0, 100% 100%, 100% 0); // левый низ → верх
+    clip-path: polygon(0 0, 100% 100%, 100% 0);
   }
 }
 
@@ -76,7 +78,7 @@
 
   &::before {
     background: rgb(253, 233, 233);
-    clip-path: polygon(100% 100%, 100% 0, 0 100%); // правый низ → верх
+    clip-path: polygon(100% 100%, 100% 0, 0 100%);
   }
 }
 .secondSection{
@@ -87,4 +89,14 @@
       flex-wrap: wrap;
       gap: 25px;
   }
+}
+
+.cardBase:hover{
+  transform: translateY(-15px);
+}
+
+.secondSection__link{
+  display: block;
+  max-width: 570px;
+  width: 100%;
 }

@@ -1,4 +1,3 @@
-import React from 'react'
 import { useCartStore } from '../../features/cart/model/cartStore'
 import { usePopularProducts } from '../../entities/product/hooks/usePopularProducts'
 import checked from '../../shared/assets/Home/free-icon-check-14090371.png'
@@ -9,8 +8,12 @@ import image2 from '../../shared/assets/Home/Rectangle 174.png'
 import image3 from '../../shared/assets/Home/Rectangle 176.png'
 import '../../styles/Home/fourthSection.scss'
 
-const Card = () => {
-  const {products} = usePopularProducts(true);
+interface propsType {
+  limit: boolean;
+}
+
+const Card = ({limit}: propsType) => {
+  const {products} = usePopularProducts(limit);
   const addToCart = useCartStore((state) => state.addToCart);
   const cartItems = useCartStore((state) => state.state);
   const images: Record<string, string> = {image1, image2, image3};
