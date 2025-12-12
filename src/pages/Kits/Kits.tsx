@@ -1,10 +1,10 @@
-import Card from '../../entities/card/Card'
+import KitsSection from './ui/KitsSection'
 
 const Kits = () => {
   return (
     <section className='kits'>
       <div className="container">
-        <Card limit={false}/>
+        <KitsSection/>
       </div>
     </section>
   )

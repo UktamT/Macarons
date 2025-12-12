@@ -1,0 +1,138 @@
+.chooseMacaron{
+  &__content{
+    display: flex;
+    align-items: flex-start;
+    flex-wrap: wrap;
+
+    gap: 10px;
+  }
+
+  &__item{
+    padding: 27px 0 0;
+    border: 1px solid rgba(237, 237, 240, 1);
+    border-radius: 5px;
+    background: rgba(255, 255, 255, 1);
+    width: 270px;
+  }
+  &__title{
+    color: rgba(41, 41, 41, 1);
+    font-size: 18px;
+    font-weight: 600;
+    line-height: 22px;
+    letter-spacing: 0%;
+    padding: 20px 16px 12px 16px;
+  }
+  &__subtitle{
+    color: rgba(41, 41, 41, 1);
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 17px;
+    letter-spacing: 0%;
+    text-align: left;
+    padding: 0 16px 52px 16px;
+    border-bottom: 1px solid rgba(237, 237, 240, 1);
+  }
+  &__image{
+    margin: 0 auto;
+    display: block;
+  }
+  &__count{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    padding: 11px 0;
+  }
+  &__btn{
+    border: 1px solid rgba(41, 41, 41, 0.1);
+    border-radius: 3px;
+    color: rgba(43, 20, 20, 1);
+    font-size: 18px;
+    font-weight: 600;
+    line-height: 22px;
+    letter-spacing: 0%;
+    text-align: center;
+    padding: 1px 6px;
+    background: rgba(255, 255, 255, 1);
+    cursor: pointer;
+  }
+
+  &__right{
+    border: 1px solid rgba(237, 237, 240, 1);
+    border-radius: 5px;
+    background: rgba(255, 255, 255, 1);
+    width: 320px;
+
+  }
+
+  &__countPrice{
+    font-size: 18px;
+    font-weight: 600;
+    line-height: 22px;
+    letter-spacing: 0%;
+    padding: 20px 0;
+    text-align: center;
+    border-bottom: 1px solid rgba(237, 237, 240, 1);
+  }
+  &__span{
+    color: rgba(231, 66, 106, 1);
+  }
+  &__items{
+    display: flex;
+    align-items: center;
+    padding: 0 20px;
+    margin: 10px 0;
+    justify-content: space-between;
+  }
+  &__name{
+    font-size: 14px;
+    font-weight: 600;
+    line-height: 22px;
+    letter-spacing: 0%;
+  }
+  &__quantity{
+    font-size: 14px;
+    font-weight: 600;
+    line-height: 22px;
+    letter-spacing: 0%;    
+  }
+  &__finalBtn{
+    border-radius: 3px;
+    background: rgba(231, 66, 106, 1);
+    cursor: pointer;
+    border: 1px solid rgba(231, 66, 106, 1);
+    color: rgba(255, 255, 255, 1);
+    font-size: 14px;
+    font-weight: 600;
+    line-height: 17px;
+    letter-spacing: 0%;
+    padding: 12px 49px;
+    transition: all ease-in-out 0.3s;
+    margin-bottom: 20px;
+
+  }
+
+  &__finalBtn:hover{
+    background: transparent;
+    color: rgba(231, 66, 106, 1);
+  }
+
+.chooseMacaron__bottomLimit {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  border-top: 1px solid rgba(237, 237, 240, 1);
+}
+
+.chooseMacaron__limit {
+  text-align: left;
+  padding: 16px 10px 16px 30px;
+  color: rgba(41, 41, 41, 1);
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 20px;
+  letter-spacing: 0%;
+}
+
+}

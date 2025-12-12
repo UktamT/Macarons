@@ -1,0 +1,85 @@
+.createSection{
+  &__content{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px;
+    align-items: center;
+    justify-content: center;
+  }
+
+  &__navigate{
+    display: flex;
+    align-self: center;
+    justify-content: center;
+  }
+
+  &__nav{
+    color: rgba(41, 41, 41, 0.46);
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 17px;
+    letter-spacing: 0%;
+    cursor: pointer;
+    padding: 34px 0 27px;
+    transition: all ease-in-out 0.3s;
+  }
+  &__nav.color{
+    color: rgba(78, 157, 211, 1);
+  }
+
+  &__nav:hover{
+    color: rgba(78, 157, 211, 1);
+  }
+
+  &__choose{
+    color: rgba(41, 41, 41, 1);
+    font-size: 30px;
+    font-weight: 600;
+    line-height: 37px;
+    letter-spacing: 0%;
+    text-align: center;
+    padding-bottom: 36px;
+  }
+
+  &__cards{
+  padding: 65px 0 33px;
+  width: 271px;
+  height: 317px;
+  border: 1px solid rgba(237, 237, 240, 1);
+  border-radius: 5px;
+  background: rgba(255, 255, 255, 1);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  cursor: pointer;
+  transition: all ease-in-out 0.3s;
+  position: relative;
+}
+
+  &__title{
+    color: rgba(41, 41, 41, 1);
+    font-size: 14px;
+    font-weight: 600;
+    line-height: 17px;
+    letter-spacing: 0%;
+    padding: 170px 0 7px;
+  }
+
+  &__price{
+    color: rgba(231, 66, 106, 1);
+    font-size: 18px;
+    font-weight: 600;
+    line-height: 22px;
+    letter-spacing: 0%;
+  }
+
+  &__image{
+    position: absolute;
+    top: 20px;
+  }
+
+
+.cardCreate:hover{
+  transform: translateY(-15px);
+}
+}

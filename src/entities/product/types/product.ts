@@ -6,4 +6,5 @@ export interface Product {
   image: string;
   quantity: number;
   tastes: object;
+  macarons: object;
 }

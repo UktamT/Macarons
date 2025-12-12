@@ -17,7 +17,7 @@ const HeaderBottom = () => {
         <div className="headerBottom__flex">
           <p style={{display: 'flex', alignItems: 'center', gap: '3px'}} className='headerBottom__title'>СЛАДКИЕ ДНИ <span className='headerBottom__span'>%</span></p>
           <p className='headerBottom__title'>подарочные наборы</p>
-          <p className='headerBottom__title'>Собрать набор</p>
+          <Link to={"/createKit"} className='headerBottom__title'>Собрать набор</Link>
           <Link to={"/"}><img src={logo} alt="" /></Link>
           <p className='headerBottom__title'>Создать дизайн</p>
           <p className='headerBottom__title'>КОМПАНИЯМ</p>
