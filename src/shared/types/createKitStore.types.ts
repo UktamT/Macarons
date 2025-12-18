@@ -13,6 +13,7 @@ export interface DraftBundle {
   items: Macaron[];
 }
 
+
 export interface BundleStore {
   draft: DraftBundle | null;
   start: (size: number, price: number) => void;

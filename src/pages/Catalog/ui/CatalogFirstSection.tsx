@@ -37,9 +37,12 @@ const CatalogFirstSection = () => {
               
               </Link>
               
+              <Link to={'/createKit'}>
               <button className="catalogFirstSection__btn">
                 Собрать свой набор
               </button>
+              </Link>
+              
             </div>
 
             </div>

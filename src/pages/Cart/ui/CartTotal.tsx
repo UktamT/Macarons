@@ -1,6 +1,7 @@
 import React from 'react'
 import { useCartStore } from '../../../features/cart/model/cartStore'
 import '../../../styles/Cart/cartTotal.scss'
+import { Link } from 'react-router-dom';
 
 const cartTotal = () => {
   const totalPrice = useCartStore((state) => state.totalPrice());
@@ -17,9 +18,12 @@ const cartTotal = () => {
         <button className='cartTotal__button'>Применить</button>
       </div>
 
+      <Link to="/checkout">
       <button className="cartTotal__btn">
         Оформить заказ
-      </button>
+      </button>      
+      </Link>
+
       
     </div>
   )

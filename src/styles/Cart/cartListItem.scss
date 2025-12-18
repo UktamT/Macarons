@@ -82,4 +82,31 @@
   &__span{
     color: black;
   }
+
+  &__bundleName{
+    color: rgba(41, 41, 41, 1);
+    font-size: 12px;
+    font-weight: 400;
+    line-height: 14px;
+    letter-spacing: 0%;
+    text-align: left;
+  }
+
+  &__bundleTitle{
+    color: rgba(41, 41, 41, 1);
+    font-size: 14px;
+    font-weight: 600;
+    line-height: 17px;
+    letter-spacing: 0%;
+    text-align: left;
+    padding-bottom: 10px;
+    margin-right: 220px;
+  }
+
+  &__bundle{
+    display: flex;
+    justify-content: space-between;
+  }
+
 }
+

@@ -46,3 +46,11 @@
     width: 29px;
   }
 }
+
+@media (max-width: 320px) {
+  .macaronShop{
+    &__content{
+      flex-direction: column;
+    }
+  }
+}

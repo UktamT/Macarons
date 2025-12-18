@@ -5,39 +5,79 @@ import image2 from '../../../shared/assets/Home/Rectangle 174.png'
 import image3 from '../../../shared/assets/Home/Rectangle 176.png'
 import close from '../../../shared/assets/Cart/Vector (14).svg'
 
-
 const CartListItem = () => {
   const products = useCartStore((state) => state.state);
-  const dec = useCartStore((state) => state.decreaseQuantity)
-  const inc = useCartStore((state) => state.increaseQuantity)
-  const del = useCartStore((state) => state.removeFromCart)
-  const images: Record<string, string> = {image1, image2, image3};
+  const dec = useCartStore((state) => state.decreaseQuantity);
+  const inc = useCartStore((state) => state.increaseQuantity);
+  const del = useCartStore((state) => state.removeFromCart);
+
+  const images: Record<string, string> = { image1, image2, image3 };
 
   return (
     <div className='cartListItem'>
-      {products.map((p) => (
-        <div key={p.id} className='cartListItem__item'>
-          <img className='cartListItem__image' src={images[p.image]} alt="" />
-          <div className='cartListItem__itemBottom'>
-            <h5 className='cartListItem__itemTitle'>{p.title}</h5>
-            <div className="cartListItem__count">
-            <button onClick={() => dec(p.id)} className="cartListItem__operator">
-              -
-            </button>
-            <p className='cartListItem__quantity'>{p.quantity}</p>
-            <button onClick={() => inc(p.id)} className="cartListItem__operator">
-              +
-            </button>
-            </div>
-            
-            <p className='cartListItem__price'><span className='cartListItem__span'>Цена: </span>{ p.price * p.quantity} руб.</p>
+      {products.map((p) => {
+        if (p.type === "bundle") {
+          return (
+            <div key={p.id} className='cartListItem__item cartListItem__bundle'>
+              
+              
 
-            <button onClick={() => del(p.id)} className="cartListItem__delete"><img className='cartListItem__close' src={close} alt="" /></button>
+              <div className="cartListItem__bundleItems">
+                <h3 className='cartListItem__bundleTitle'>
+                  Набор на {p.bundle.size} шт.
+                </h3>
+                {p.bundle.items.map((m) => (
+                  <div key={m.id} className='cartListItem__bundleItem'>
+                    
+                    <p className='cartListItem__bundleName'>
+                      {m.title}:  {m.quantity}шт.
+                    </p>
+                  </div>
+                ))}
+              </div>
+
+              <div className="cartListItem__count">
+                <button onClick={() => dec(p.id)} className="cartListItem__operator">-</button>
+                <p className='cartListItem__quantity'>{p.quantity}</p>
+                <button onClick={() => inc(p.id)} className="cartListItem__operator">+</button>
+              </div>
+
+              <p className='cartListItem__price'>
+                <span className='cartListItem__span'>Цена:</span> {p.price * p.quantity} руб.
+              </p>
+
+              <button onClick={() => del(p.id)} className="cartListItem__delete">
+                <img className='cartListItem__close' src={close} alt="" />
+              </button>
+            </div>
+          )
+        }
+
+        return (
+          <div key={p.id} className='cartListItem__item'>
+            <img className='cartListItem__image' src={images[p.image]} alt="" />
+            <div className='cartListItem__itemBottom'>
+              <h5 className='cartListItem__itemTitle'>{p.title}</h5>
+
+              <div className="cartListItem__count">
+                <button onClick={() => dec(p.id)} className="cartListItem__operator">-</button>
+                <p className='cartListItem__quantity'>{p.quantity}</p>
+                <button onClick={() => inc(p.id)} className="cartListItem__operator">+</button>
+              </div>
+
+              <p className='cartListItem__price'>
+                <span className='cartListItem__span'>Цена:</span> {p.price * p.quantity} руб.
+              </p>
+
+              <button onClick={() => del(p.id)} className="cartListItem__delete">
+                <img className='cartListItem__close' src={close} alt="" />
+              </button>
+            </div>
           </div>
-        </div>
-      ))}
+        );
+      })}
     </div>
   )
 }
 
-export default CartListItem
+export default CartListItem;

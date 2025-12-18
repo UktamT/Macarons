@@ -6,6 +6,8 @@ import Catalog from "../../pages/Catalog/Catalog";
 import Kits from "../../pages/Kits/Kits";
 import Create from "../../pages/Create/Create";
 import ChooseMacaron from "../../pages/ChooseTaste/ui/ChooseMacaron";
+import News from "../../pages/News/News";
+import Checkout from "../../pages/Checkout/Checkout";
 
 export interface AppRoute {
   path: string;
@@ -20,4 +22,6 @@ export const routes: AppRoute[] = [
   { path: "/readyKits", element: <Kits/> },
   { path: "/createKit", element: <Create/> },
   { path: "/chooseMacaron", element: <ChooseMacaron/> },
+  { path: "/newspage/:id", element: <News/> },
+  { path: '/checkout', element: <Checkout/> },
 ];

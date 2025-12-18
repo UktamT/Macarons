@@ -1,9 +1,18 @@
-import React from 'react'
 import '../../../styles/Home/fifthSection.scss'
 
-import image from '../../../shared/assets/Home/Rectangle 282.png'
+import image1 from '../../../shared/assets/Home/Rectangle 282.png'
+import image2 from '../../../shared/assets/Home/Rectangle 282 (1).png'
+import image3 from '../../../shared/assets/Home/Rectangle 282 (2).png'
+import { useNews } from '../../../entities/news/hooks/useNews'
+import { Link } from 'react-router-dom'
+
+
 
 const FifthSection = () => {
+  const { news, loading } = useNews()
+  const images: Record<string, string> = {image1, image2, image3};
+
+  if(loading) return <div>Loading...</div>
   return (
     <section className='fifthSection'>
       <div className="container">
@@ -11,44 +20,24 @@ const FifthSection = () => {
 
 
         <div className="fifthSection__news">
-          <div className="fifthSection__card">
-            <img src={image} alt="" />
+          {news.map((i) => (
+            <Link to={`/newspage/${i.id}`} key={i.id}>
+          <div  className="fifthSection__card">
+            <img src={images[i.image]} alt="" />
 
             <div className="fifthSection__text">
-              <p className='fifthSection__date'>25.02.2023</p>
+              <p className='fifthSection__date'>{i.date}</p>
 
-              <h6 className='fifthSection__name'>Скоро главный праздник весны!</h6>
+              <h6 className='fifthSection__name'>{i.title}</h6>
 
-              <p className='fifthSection__subtitle'>Девушки любят, когда вкусно, красиво и <br /> натурально. Смотрите больше наборов с <br />десертами ручной работы</p>
+              <p className='fifthSection__subtitle'>{i.subtitle}</p>
             </div>
             
-          </div>
+          </div>              
+            </Link>
+          
+          ))}
 
-          <div className="fifthSection__card">
-            <img src={image} alt="" />
-
-            <div className="fifthSection__text">
-              <p className='fifthSection__date'>25.02.2023</p>
-
-              <h6 className='fifthSection__name'>Скоро главный праздник весны!</h6>
-
-              <p className='fifthSection__subtitle'>Девушки любят, когда вкусно, красиво и <br /> натурально. Смотрите больше наборов с <br />десертами ручной работы</p>
-            </div>
-            
-          </div>
-
-          <div className="fifthSection__card">
-            <img src={image} alt="" />
-
-            <div className="fifthSection__text">
-              <p className='fifthSection__date'>25.02.2023</p>
-
-              <h6 className='fifthSection__name'>Скоро главный праздник весны!</h6>
-
-              <p className='fifthSection__subtitle'>Девушки любят, когда вкусно, красиво и <br /> натурально. Смотрите больше наборов с <br />десертами ручной работы</p>
-            </div>
-            
-          </div>
         </div>
         <div style={{margin: '35px 0 85px 0'}}>
           <button className='fifthSection__btn'>Все новости</button>

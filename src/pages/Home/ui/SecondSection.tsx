@@ -20,13 +20,15 @@ const SecondSection = () => {
             />
           </Link>
           
-  
+          <Link className='secondSection__link' to={'/createKit'}>
           <Card
               color={'cardSecond'}
               image={puncake}
               title={'Собрать свой набор'}
               subtitle={'Выбрать количество макарун, и выбрать вкусы'}
-            />
+            />          
+          </Link>
+
 
             
 

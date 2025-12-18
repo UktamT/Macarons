@@ -25,6 +25,7 @@ export const useCartStore = create<CartStore>((set, get) => ({
         state: [...state.state, { ...product, quantity }],
       };
     });
+    
   },
 
   increaseQuantity: (productId: number) => {
@@ -68,4 +69,10 @@ export const useCartStore = create<CartStore>((set, get) => ({
     const totalPriceState = get().state;
     return totalPriceState.reduce((acc, item) => acc + item.price * item.quantity, 0);
   },
+  addKit: (kit) => {
+  set((state) => ({
+    state: [...state.state, kit],
+  }));
+},
+
 }));

@@ -1,6 +1,12 @@
 .fifthSection{
   &__card{
     width: 370px;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+  }
+
+  &__card:hover{
+    transform: translateY(-15px);
   }
   &__text{
     border: 1px solid rgba(237, 237, 240, 1);
@@ -46,7 +52,7 @@
 
   &__news{
     display: flex;
-    align-items: center;
+    align-items: flex-start;
     gap: 29px;
   }
 
