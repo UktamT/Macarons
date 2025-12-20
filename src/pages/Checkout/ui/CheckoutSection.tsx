@@ -5,7 +5,7 @@ const CheckoutSection = () => {
 
   return (
     <section className='checkoutSection'>
-      <p>Total Price: {totalPrice} руб</p>
+      <p>Total Prices: {totalPrice} руб</p>
     </section>
   )
 }
