@@ -12,8 +12,8 @@ export interface CartItem {
 }
 
 export interface kitType {
-  id: number;
   type: "bundle";
+  id: number;
   price: number;
   quantity: number;
   bundle: {

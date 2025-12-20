@@ -9,7 +9,7 @@ export interface ApiError {
 
 export const getProducts = async (): Promise<Product[]> => {
   try {
-    const response = await api.get<Product[]>("/products?_limit=3");
+    const response = await api.get<Product[]>("/products");
     return response.data;
   } catch (error) {
     const axiosError = error as AxiosError<{ message?: string }>;

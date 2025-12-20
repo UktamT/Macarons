@@ -18,7 +18,7 @@ const NewsSection = () => {
         <div className="newsSection__content">
           <p className='newsSection__title'>{news?.title}</p>
           <p className='newsSection__subtitle'>{news?.subtitle}</p>
-          <img src={images[news.image]} alt="" />
+          <img src={news && images[news.image]} alt="" />
         </div>
       </div>
     </section>

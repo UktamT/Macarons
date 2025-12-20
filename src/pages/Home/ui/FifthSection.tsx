@@ -20,9 +20,10 @@ const FifthSection = () => {
 
 
         <div className="fifthSection__news">
-          {news.map((i) => (
-            <Link to={`/newspage/${i.id}`} key={i.id}>
-          <div  className="fifthSection__card">
+          {news.map((i, index) => (
+            <div key={index} className="fifthSection__card">
+            <Link to={`/newspage/${i.id}`} >
+          
             <img src={images[i.image]} alt="" />
 
             <div className="fifthSection__text">
@@ -33,9 +34,9 @@ const FifthSection = () => {
               <p className='fifthSection__subtitle'>{i.subtitle}</p>
             </div>
             
-          </div>              
+                       
             </Link>
-          
+          </div> 
           ))}
 
         </div>

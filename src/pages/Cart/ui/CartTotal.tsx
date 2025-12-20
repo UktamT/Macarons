@@ -1,10 +1,10 @@
-import React from 'react'
 import { useCartStore } from '../../../features/cart/model/cartStore'
 import '../../../styles/Cart/cartTotal.scss'
 import { Link } from 'react-router-dom';
 
 const cartTotal = () => {
   const totalPrice = useCartStore((state) => state.totalPrice());
+  
 
   return (
     <div className='cartTotal'>

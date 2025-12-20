@@ -1,12 +1,12 @@
 import { useEffect, useState } from "react";
-import { getProductById, type ApiError } from "../api/getProductById";
+import { getProductById } from "../api/getProductById";
 import type { Product } from "../types/product";
 
 
 export const useProductById = (id: number) => {
-  const [products, setProducts] = useState<Product>()
+  const [products, setProducts] = useState<Product>([] as unknown as Product)
   const [loading, setLoading] = useState(true)
-  const [error, setError] = useState<ApiError | null>(null)
+  const [error, setError] = useState< null>(null)
 
 
   useEffect(() => {
@@ -14,9 +14,9 @@ export const useProductById = (id: number) => {
     const fetchProduct = async () => {
       try {
         const data = await getProductById(id);
-        setProducts(data);
+        setProducts(data as Product);
       } catch (err) {
-        setError(err as ApiError)
+        setError(err as null)
         console.error(err)
       } finally {
         setLoading(false)

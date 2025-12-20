@@ -22,7 +22,7 @@ export const useCartStore = create<CartStore>((set, get) => ({
       }
 
       return {
-        state: [...state.state, { ...product, quantity }],
+        state: [...state.state, { ...product, quantity, type: "product" }],
       };
     });
     

@@ -1,4 +1,4 @@
-import React from 'react'
+
 import '../../../styles/Catalog/catalogFirstSection.scss'
 import imageFirst from '../../../shared/assets/Catalog/IMG_3027 копия 1.png'
 import imageSecond from '../../../shared/assets/Catalog/IMG_2745 1.png'

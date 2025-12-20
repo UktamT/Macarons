@@ -1,4 +1,3 @@
-import React from 'react'
 import ChooseMacaron from './ChooseMacaron'
 
 const ChooseSection = () => {

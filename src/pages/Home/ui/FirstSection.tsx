@@ -1,4 +1,3 @@
-import React from 'react'
 import '../../../styles/Home/firstSection.scss'
 import logo from '../../../shared/assets/Home/Слой 0 1.svg'
 

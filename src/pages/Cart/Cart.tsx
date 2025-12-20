@@ -1,4 +1,3 @@
-import React from 'react'
 import FirstSection from './ui/FirstSection'
 
 

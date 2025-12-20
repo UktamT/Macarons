@@ -1,7 +1,7 @@
-import { api } from "../../../shared/api/axiosInstance";
+import { apiMacaron } from "../../../shared/api/macaronsInstance";
 import type { Macaron } from "../types/macaron.types";
 
 export const getMacaron = async (): Promise<Macaron> => {
-  const response = await api.get<Macaron>("/macarons");
+  const response = await apiMacaron.get<Macaron>("/api");
   return response.data
 }

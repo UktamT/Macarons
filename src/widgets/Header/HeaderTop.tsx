@@ -1,4 +1,3 @@
-import React from 'react'
 import mindal from '../../shared/assets/Header/Group 108.svg'
 import '../../styles/Header/headerTop.scss'
 

@@ -1,4 +1,4 @@
-import React from 'react'
+
 import ChooseSection from './ui/ChooseSection'
 
 const ChooseTaste = () => {

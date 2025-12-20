@@ -17,7 +17,7 @@ export const ItemPageSection = () => {
     
   if (!id) return <div>Товар не найден</div>;
   if (loading) return <div>Загрузка...</div>;
-  if (error) return <div>Ошибка: {error.message}</div>;
+  if (error) return <div>Ошибка: {error}</div>;
     
   return (
     <div className='itemPageSection'>
@@ -28,7 +28,7 @@ export const ItemPageSection = () => {
       </div>
 
       <div className="itemPageSection__content">
-      <img className='itemPageSection__image' src={images[products.image]} alt="" />
+      <img className='itemPageSection__image' src={products && images[products.image]} alt="" />
       <div className="itemPageSection__right">
       <p className='itemPageSection__title'>{products?.title}</p>
       <p className='itemPageSection__subtitle'>{products?.subtitle}</p>

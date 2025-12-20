@@ -1,4 +1,4 @@
-import React from 'react'
+
 import CatalogFirstSection from './ui/CatalogFirstSection'
 
 const Catalog = () => {

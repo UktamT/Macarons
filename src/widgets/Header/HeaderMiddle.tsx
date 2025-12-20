@@ -1,4 +1,4 @@
-import React from 'react'
+
 import '../../styles/Header/headerMiddle.scss'
 import gis from '../../shared/assets/Header/Vector (10).svg'
 import phone from '../../shared/assets/Header/phone.svg'

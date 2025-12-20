@@ -3,23 +3,23 @@ import type { News } from "../types/News.types";
 import { getNews } from "../api/getNews";
 
 export const useNews = () => {
-  const [news, setNews] = useState<News[]>([])
-  const [loading, setLoading] = useState(true)
+  const [news, setNews] = useState<News[]>([]); // <-- массив
+  const [loading, setLoading] = useState(true);
 
   useEffect(() => {
     const fetchNews = async () => {
       try {
-        const data = await getNews();
-        setNews(data);
+        const data = await getNews(); // getNews должен возвращать News[]
+        setNews(data); // сразу массив
       } catch (err) {
-        console.error(err)
+        console.error(err);
       } finally {
-        setLoading(false)
+        setLoading(false);
       }
     };
 
-    fetchNews()
+    fetchNews();
+  }, []);
 
-  }, [])
-  return { news, loading} as const;
-}
+  return { news, loading } as const;
+};
