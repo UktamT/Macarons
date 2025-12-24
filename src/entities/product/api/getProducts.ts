@@ -25,7 +25,12 @@ export const getProducts = async (): Promise<Product[]> => {
 
 export const getProductsUnLimited = async (): Promise<Product[]> => {
   try {
-    const response = await api.get<Product[]>("/products");
+    const response = await api.get<Product[]>('/products', {
+      params: {
+        page: 1,
+        limit: 3,
+  },
+});
     return response.data;
   } catch (error) {
     const axiosError = error as AxiosError<{ message?: string }>;

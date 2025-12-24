@@ -12,7 +12,7 @@ export const useMacaron = () => {
     const fetchProduct = async () => {
       try {
         const data = await getMacaron();
-        setMacaron([data]);
+        setMacaron(data);
 
       } catch (err) {
         console.error(err)

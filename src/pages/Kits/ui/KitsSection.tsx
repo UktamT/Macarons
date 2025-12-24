@@ -17,7 +17,7 @@ const KitsSection = () => {
       </div>
 
       <h2 className='kitsSection__title'>Готовые наборы</h2>
-      <Card limit={false}/>
+      <Card limit={true}/>
     </div>
   )
 }

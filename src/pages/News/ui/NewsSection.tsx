@@ -10,8 +10,10 @@ const NewsSection = () => {
   const newsId = Number(id)
   const { news, loading, error } = useNewsById(newsId)
   const images: Record<string, string> = {image1, image2, image3};
+
   if(loading) return <div>Loading...</div>
   if(error) return <div>Error: {error.message}</div>
+
   return (
     <section className='newsSection'>
       <div className="container">

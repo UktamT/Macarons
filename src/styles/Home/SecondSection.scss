@@ -100,3 +100,25 @@
   max-width: 570px;
   width: 100%;
 }
+
+
+@media (max-width: 500px) {
+  .secondSection {
+    &__content{
+      display: block;
+    }
+
+    .cardFirst{
+      margin-bottom: 20px;
+    }
+    .cardSecond{
+      margin-bottom: 20px;
+    }
+    .cardThird{
+      margin-bottom: 20px;
+    }
+    .cardFourth{
+      margin-bottom: 20px;
+    }
+  }
+}

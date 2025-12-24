@@ -5,6 +5,7 @@ import image2 from '../../../shared/assets/Home/Rectangle 282 (1).png'
 import image3 from '../../../shared/assets/Home/Rectangle 282 (2).png'
 import { useNews } from '../../../entities/news/hooks/useNews'
 import { Link } from 'react-router-dom'
+import NewsSkeleton from './NewsSkeleton'
 
 
 
@@ -12,7 +13,6 @@ const FifthSection = () => {
   const { news, loading } = useNews()
   const images: Record<string, string> = {image1, image2, image3};
 
-  if(loading) return <div>Loading...</div>
   return (
     <section className='fifthSection'>
       <div className="container">
@@ -20,7 +20,11 @@ const FifthSection = () => {
 
 
         <div className="fifthSection__news">
-          {news.map((i, index) => (
+          {
+            loading 
+            ? [...Array(3)].map((_, index) => (<NewsSkeleton key={index} />)) 
+            : news.map((i, index) => (
+
             <div key={index} className="fifthSection__card">
             <Link to={`/newspage/${i.id}`} >
           

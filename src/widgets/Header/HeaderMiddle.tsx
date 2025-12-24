@@ -3,10 +3,10 @@ import '../../styles/Header/headerMiddle.scss'
 import gis from '../../shared/assets/Header/Vector (10).svg'
 import phone from '../../shared/assets/Header/phone.svg'
 import bag from '../../shared/assets/Header/bag.svg'
-import tg from '../../shared/assets/Header/tg.svg'
-import vk from '../../shared/assets/Header/vk.svg'
-import ok from '../../shared/assets/Header/ok.svg'
+import login from '../../shared/assets/Header/profile.png'
+import signUp from '../../shared/assets/Header/add-user.png'
 import { useCartStore } from '../../features/cart/model/cartStore'
+import profile from '../../shared/assets/Header/profile.png'
 
 import { Link } from 'react-router-dom'
 
@@ -53,9 +53,27 @@ const HeaderMiddle = () => {
           
 
           <div className='headerMiddle__socials'>
-            <img src={tg} alt="" />
-            <img src={vk} alt="" />
-            <img src={ok} alt="" />
+            {
+              localStorage.getItem('token') ? (
+                <button onClick={() => {
+                  localStorage.removeItem('token')
+                  alert('Вы вышли из аккаунта')
+                }}>
+                  <img className='headerMiddle__profile' src={profile} alt="" />
+                </button>
+                
+              ) : (
+              <>
+              <Link to={'/signin'}>
+              <img className='headerMiddle__login' src={login} alt="" />
+              </Link>
+              <Link to={'/signup'}>
+              <img className='headerMiddle__signUp' src={signUp} alt="" />
+              </Link>              
+              </>
+
+              )
+            }
           </div>
         </div>
         </div>

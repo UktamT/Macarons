@@ -1,18 +1,9 @@
 import '../../../styles/Home/fourthSection.scss'
-import { usePopularProducts } from '../../../entities/product/hooks/usePopularProducts'
 import Card from '../../../entities/card/Card';
 
 
 
 const FourthSection = () => {
-  const {loading, error} = usePopularProducts();
-
-  
-  if(loading) return <p>падажди баля, загрузка</p>
-  if(error) return <p>Ошибка: {error.message}</p>
-  
-  
-
   return (
     <section className='fourthSection'>
       <div className="container">
@@ -20,7 +11,7 @@ const FourthSection = () => {
           Популярные наборы
         </h4>
 
-      <Card limit={true}/>
+      <Card limit={false}/>
 
       <div className="fourthSection__auto">
         <button className="fourthSection__more">

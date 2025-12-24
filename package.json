@@ -10,12 +10,17 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@hookform/resolvers": "^5.2.2",
     "axios": "^1.13.2",
     "json-server": "^1.0.0-beta.3",
+    "json-server-auth": "^2.1.0",
     "react": "^19.2.0",
+    "react-content-loader": "^7.1.1",
     "react-dom": "^19.2.0",
+    "react-hook-form": "^7.69.0",
     "react-router-dom": "^7.9.6",
     "sass": "^1.94.0",
+    "zod": "^4.2.1",
     "zustand": "^5.0.8"
   },
   "devDependencies": {

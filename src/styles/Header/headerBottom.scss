@@ -58,3 +58,12 @@
     background: rgb(235, 235, 235);
   }
 }
+
+
+@media (max-width: 500px) {
+  .headerBottom {
+    &__title{
+      color: red;
+    }
+  }
+}

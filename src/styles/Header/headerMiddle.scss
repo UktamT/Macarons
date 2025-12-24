@@ -64,4 +64,21 @@
     align-items: center;
     justify-content: center;
   }
+  &__login{
+    width: 20px;
+    height: 20px;
+    cursor: pointer;
+  }
+  &__signUp{
+    width: 21px;
+    height: 21px;
+    cursor: pointer;
+  }
+
+  &__profile{
+    width: 21px;
+    height: 21px;
+    cursor: pointer;
+  }
+
 }

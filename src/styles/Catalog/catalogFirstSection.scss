@@ -45,6 +45,14 @@
     line-height: 17px;
     letter-spacing: 0%;
     cursor: pointer;
+    transition: all ease-in-out 0.5s;
+  }
+
+  &__btn:hover{
+    background: rgba(78, 157, 211, 1);
+    color: white; 
+    transform: translateY(-5px);
+
   }
   &__btns{
     display: flex;
