@@ -10,6 +10,8 @@ import News from "../../pages/News/News";
 import Checkout from "../../pages/Checkout/Checkout";
 import SignUp from "../../pages/SignUp/SignUp";
 import SignIn from "../../pages/SignIn/SignIn";
+import Profile from "../../pages/Profile/Profile";
+import ProtectedRoute from "../../shared/ui/ProtectedRoute";
 
 export interface AppRoute {
   path: string;
@@ -28,4 +30,5 @@ export const routes: AppRoute[] = [
   { path: '/checkout', element: <Checkout/> },
   { path: '/signup', element: <SignUp/> },
   { path: '/signin', element: <SignIn/> },
+  { path: '/profile', element: <ProtectedRoute><Profile/></ProtectedRoute>}
 ];

@@ -3,10 +3,12 @@ import { useForm } from 'react-hook-form'
 import { zodResolver } from '@hookform/resolvers/zod'
 import { loginSchema, type LoginFormValues } from './model/login.schema'
 import { loginApi } from './api/login.api'
-import { useNavigate } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
+import { useState } from 'react'
 
 export const Login = () => {
   const navigate = useNavigate()
+  const [errorMsg, setErrorMsg] = useState<string | null>(null)
 
   const {
     register,
@@ -23,8 +25,10 @@ export const Login = () => {
       navigate('/')
       alert('Успешный вход!')
       
-    } catch (error) {
-      console.error('Login error:', error)}
+    } catch (error: any) {
+      const messageError = error ||'Неправильный пароль либо логин'
+      setErrorMsg(messageError)
+    }
   }
 
   return (
@@ -71,11 +75,13 @@ export const Login = () => {
           <button className="login-form__submit">
             Вход
           </button>
+
+          {errorMsg && <p style={{color: 'red'}}>{errorMsg}</p>}
         </form>
 
         <p className="login-modal__footer">
           Еще не зарегистрированы?{' '}
-          <span>Зарегистрироваться</span>
+          <Link className='login-modal__exist' to={'/signup'}>Зарегистрироваться</Link>
         </p>
       </div>
     </div>

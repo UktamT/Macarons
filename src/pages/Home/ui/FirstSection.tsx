@@ -1,5 +1,9 @@
 import '../../../styles/Home/firstSection.scss'
 import logo from '../../../shared/assets/Home/Слой 0 1.svg'
+import back1 from '../../../shared/assets/Home/Ellipse 20.png'
+import back2 from '../../../shared/assets/Home/Ellipse 5 (1).png'
+import back3 from '../../../shared/assets/Home/Ellipse 3 (1).png'
+import back4 from '../../../shared/assets/Home/Ellipse 21.png'
 
 const FirstSection = () => {
 
@@ -8,6 +12,10 @@ const FirstSection = () => {
       <div className="container">
         <div className="macaronShop__content">
           <img src={logo} alt="" />
+          <img className='macaronShop__backFirst' src={back1} alt="" />
+          <img className='macaronShop__backSecond' src={back2} alt="" />
+          <img className='macaronShop__backThird' src={back3} alt="" />
+          <img className='macaronShop__backFourth' src={back4} alt="" />
           <div className="macaronShop__text">
             <h1 className='macaronShop__title'>
               MACARONSHOP

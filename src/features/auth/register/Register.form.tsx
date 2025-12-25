@@ -5,7 +5,8 @@ import type { RegisterFormValues } from './model/register.schema'
 import { zodResolver} from '@hookform/resolvers/zod'
 import  { registerSchema } from './model/register.schema'
 import { registerApi } from './api/register.api'
-import { useNavigate } from 'react-router-dom'
+import { useNavigate, Link } from 'react-router-dom'
+
 
 export function Register() {
   const navigate = useNavigate()
@@ -86,7 +87,7 @@ const onSubmit = async (data: RegisterFormValues) => {
       </form>
 
       <p className="register-modal__login">
-        Уже зарегистрированы? Войти
+        Уже зарегистрированы? <Link to={'/signin'}>Войти</Link>
       </p>
 
       <p className="register-modal__policy">

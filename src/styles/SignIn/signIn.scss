@@ -6,6 +6,9 @@
   border-radius: 8px;
   font-family: Arial, sans-serif;
 
+  &__exist{
+    color: rgba(231, 66, 106, 1);
+  }
   &__title {
     text-align: center;
     font-size: 22px;

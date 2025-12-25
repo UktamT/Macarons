@@ -8,9 +8,10 @@ import signUp from '../../shared/assets/Header/add-user.png'
 import { useCartStore } from '../../features/cart/model/cartStore'
 import profile from '../../shared/assets/Header/profile.png'
 
-import { Link } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
 
 const HeaderMiddle = () => {
+  const Navigate = useNavigate()
   const cartItems = useCartStore((state) => state.state)
 
   return (
@@ -55,9 +56,8 @@ const HeaderMiddle = () => {
           <div className='headerMiddle__socials'>
             {
               localStorage.getItem('token') ? (
-                <button onClick={() => {
-                  localStorage.removeItem('token')
-                  alert('Вы вышли из аккаунта')
+                <button className='headerMiddle__profile' onClick={() => {
+                  Navigate('/profile')
                 }}>
                   <img className='headerMiddle__profile' src={profile} alt="" />
                 </button>

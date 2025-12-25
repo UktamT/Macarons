@@ -1,17 +1,19 @@
-import axios from "axios"
 import type { LoginFormValues } from "../model/login.schema"
-const API_URL = 'http://localhost:3002'
+import { useSessionStore } from "../../../../shared/store/authStore"
+import { $api } from "../../../../shared/api/authInstance"
 
 export const loginApi = async (data: LoginFormValues) => {
-  const response = await axios.post(`${API_URL}/login`, {
+  const response = await $api.post(`/login`, {
     email: data.email,
     password: data.password,
 
   })
   localStorage.setItem('token', response.data.token)
 
+  useSessionStore.getState().setUser(response.data.user);
+
   return response.data.user
-  
+   
 
 
 

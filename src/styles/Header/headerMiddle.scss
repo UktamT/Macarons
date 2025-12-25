@@ -8,6 +8,11 @@
     gap: 20px;
   }
 
+  &__profile{
+    border: none;
+    background: transparent;
+  }
+
   &__text{
     color: rgba(0, 0, 0, 0.79);
     font-size: 13px;
