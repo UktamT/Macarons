@@ -1,5 +1,6 @@
 import '../../../styles/Home/fourthSection.scss'
 import Card from '../../../entities/card/Card';
+import { Link } from 'react-router-dom';
 
 
 
@@ -14,9 +15,12 @@ const FourthSection = () => {
       <Card limit={false}/>
 
       <div className="fourthSection__auto">
-        <button className="fourthSection__more">
-          Все праздничные наборы
-        </button>
+        <Link to={'/readyKits'}>
+          <button className="fourthSection__more">
+            Все праздничные наборы
+          </button>
+        </Link>
+        
       </div>
         
       </div>

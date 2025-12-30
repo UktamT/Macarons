@@ -12,6 +12,8 @@ import SignUp from "../../pages/SignUp/SignUp";
 import SignIn from "../../pages/SignIn/SignIn";
 import Profile from "../../pages/Profile/Profile";
 import ProtectedRoute from "../../shared/ui/ProtectedRoute";
+import Orders from "../../pages/Orders/Orders";
+import Error from "../../shared/ui/Error";
 
 export interface AppRoute {
   path: string;
@@ -30,5 +32,7 @@ export const routes: AppRoute[] = [
   { path: '/checkout', element: <Checkout/> },
   { path: '/signup', element: <SignUp/> },
   { path: '/signin', element: <SignIn/> },
-  { path: '/profile', element: <ProtectedRoute><Profile/></ProtectedRoute>}
+  { path: '/profile', element: <ProtectedRoute><Profile/></ProtectedRoute>},
+  { path: '/orders', element: <Orders/>},
+  { path: '*', element: <Error/> },
 ];

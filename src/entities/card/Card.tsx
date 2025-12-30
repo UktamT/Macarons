@@ -6,6 +6,8 @@ import cart from '../../shared/assets/Header/bag.svg'
 import image1 from '../../shared/assets/Home/Rectangle 172 (1).png'
 import image2 from '../../shared/assets/Home/Rectangle 174.png'
 import image3 from '../../shared/assets/Home/Rectangle 176.png'
+import image4 from '../../shared/assets/Home/Rectangle 282 (3).png'
+import image5 from '../../shared/assets/Home/Rectangle 283.png'
 import '../../styles/Home/fourthSection.scss'
 import CardSkeleton from '../../shared/ui/CardSkeleton'
 
@@ -14,11 +16,10 @@ interface propsType {
 }
 
 const Card = ({ limit }: propsType) => {
-  // Достаем loading из твоего хука
   const { products, loading } = usePopularProducts(limit);
   const addToCart = useCartStore((state) => state.addToCart);
   const cartItems = useCartStore((state) => state.state);
-  const images: Record<string, string> = { image1, image2, image3 };
+  const images: Record<string, string> = { image1, image2, image3, image4, image5 };
 
   return (
     <div className='fourthSection__kits'>

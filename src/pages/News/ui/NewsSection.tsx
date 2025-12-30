@@ -18,9 +18,16 @@ const NewsSection = () => {
     <section className='newsSection'>
       <div className="container">
         <div className="newsSection__content">
-          <p className='newsSection__title'>{news?.title}</p>
-          <p className='newsSection__subtitle'>{news?.subtitle}</p>
-          <img src={news && images[news.image]} alt="" />
+          <div className="newsSection__text">
+            <div className='newsSection__hashtags'>
+              {news?.hashtags.map((hashtag) => (
+                <p className='newsSection__hashtag' key={news.id}>{hashtag}</p>
+              ))}
+            </div>
+            <p className='newsSection__title'>{news?.title}</p>
+            {news?.description.split('\n').map((str) => (<p className='newsSection__subtitle' key={str}>{str}</p>))}
+          </div>
+          <img className='newsSection__image' src={news && images[news.image]} alt="" />
         </div>
       </div>
     </section>

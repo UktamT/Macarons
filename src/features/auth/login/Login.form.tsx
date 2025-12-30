@@ -25,9 +25,12 @@ export const Login = () => {
       navigate('/')
       alert('Успешный вход!')
       
-    } catch (error: any) {
-      const messageError = error ||'Неправильный пароль либо логин'
-      setErrorMsg(messageError)
+    } catch (error: unknown) {
+      setErrorMsg('Неправильный логин либо пароль')
+      if (process.env.NODE_ENV === 'development') {
+        console.warn('Ошибка авторизации:', error);
+      }
+      
     }
   }
 

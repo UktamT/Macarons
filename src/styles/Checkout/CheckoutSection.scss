@@ -1,0 +1,192 @@
+$color-primary: #e94e67;
+$color-border: #e0e0e0;
+$color-text-light: #999;
+$color-bg-input: #f9f9f9;
+$color-active-blue: #4a90e2;
+
+.delivery-container {
+  max-width: 800px;
+  margin: 40px auto;
+  font-family: 'Helvetica', sans-serif;
+  color: #333;
+}
+
+.order-form {
+  &__title { text-align: center; font-size: 28px; margin-bottom: 10px; }
+  &__subtitle { text-align: center; color: $color-text-light; margin-bottom: 30px; font-size: 14px; }
+  
+  &__row { display: flex; gap: 20px; }
+  &__field { flex: 1; margin-bottom: 20px; }
+
+  &__label-text {
+    font-size: 14px;
+    margin: 0 0 8px 0;
+    font-weight: 500;
+  }
+
+  &__input, &__select, &__textarea {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid $color-border;
+    border-radius: 4px;
+    background-color: $color-bg-input;
+    box-sizing: border-box;
+    font-family: inherit;
+    
+    &:disabled { background-color: #eee; cursor: not-allowed; }
+  }
+
+  // Стили конкретно для инпута даты
+  &__input {
+    &--datepicker {
+      padding-right: 40px; 
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='18' height='18' viewBox='0 0 24 24' fill='none' stroke='%23999' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Crect x='3' y='4' width='18' height='18' rx='2' ry='2'%3E%3C/rect%3E%3Cline x1='16' y1='2' x2='16' y2='6'%3E%3C/line%3E%3Cline x1='8' y1='2' x2='8' y2='6'%3E%3C/line%3E%3Cline x1='3' y1='10' x2='21' y2='10'%3E%3C/line%3E%3C/svg%3E");
+      background-repeat: no-repeat;
+      background-position: right 12px center;
+      background-size: 18px;
+      cursor: pointer;
+
+      // Чтобы иконка не пропадала при фокусе в некоторых браузерах
+      &:focus {
+        background-color: $color-bg-input;
+      }
+    }
+  }
+
+  &__textarea { height: 80px; resize: none; }
+
+  &__datepicker-wrapper {
+    position: relative; 
+    width: 100%;
+
+    // Растягиваем внутренний контейнер библиотеки
+    .react-datepicker-wrapper {
+      width: 100%;
+    }
+  }
+
+  &__footer { margin-top: 40px; text-align: center; }
+  &__total { font-size: 16px; margin-bottom: 20px; }
+  &__total-price { color: $color-primary; font-weight: bold; font-size: 20px; }
+
+  &__submit {
+    background-color: $color-primary;
+    color: white;
+    border: none;
+    padding: 15px 50px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-weight: bold;
+    
+    &:hover { background-color: darken($color-primary, 5%); }
+  }
+}
+
+.delivery-methods {
+  display: flex;
+  gap: 20px;
+  margin-bottom: 20px;
+
+  &__hidden-input {
+    display: none; 
+  }
+
+  &__item {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    padding: 15px;
+    border: 1px solid $color-border;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: 0.2s;
+
+    &--active {
+      border: 2px solid $color-active-blue;
+      padding: 14px; 
+    }
+  }
+
+  &__icon { font-size: 24px; margin-right: 15px; }
+  &__info { display: flex; flex-direction: column; }
+  &__name { font-weight: bold; font-size: 14px; }
+  &__price {
+    font-size: 13px;
+    &--red { color: $color-primary; }
+    &--green { color: #27ae60; }
+  }
+}
+
+.payment-methods {
+  display: flex;
+  gap: 25px;
+
+  &__item {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+  }
+
+  &__hidden-input {
+    display: none;
+  }
+
+  &__custom-checkbox {
+    width: 18px;
+    height: 18px;
+    border: 1px solid $color-border;
+    border-radius: 3px;
+    margin-right: 10px;
+    background: white;
+    position: relative;
+
+    &--active {
+      background-color: $color-primary;
+      border-color: $color-primary;
+
+      &::after {
+        content: '✓';
+        position: absolute;
+        color: white;
+        font-size: 12px;
+        left: 3px;
+        top: 0;
+      }
+    }
+  }
+
+  &__text { font-size: 14px; }
+}
+
+// Стили самого выпадающего календаря
+.react-datepicker {
+  font-family: inherit;
+  border-color: $color-border;
+  
+  &__header {
+    background-color: $color-bg-input;
+    border-bottom: 1px solid $color-border;
+  }
+
+  &__day--selected {
+    background-color: $color-primary !important; 
+    border-radius: 4px;
+    color: white;
+  }
+
+  &__day:hover {
+    border-radius: 4px;
+  }
+}
+
+.error-text {
+  color: #e94e67; // Ваш основной розовый цвет
+  font-size: 12px;
+  margin-top: 4px;
+  display: block;
+}
+
+.order-form__input--error {
+  border-color: #e94e67 !important;
+  background-color: #fffafa; // Легкий розовый оттенок
+}

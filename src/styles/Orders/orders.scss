@@ -1,0 +1,226 @@
+// Улучшенные переменные
+$primary-color: #e94e67;
+$primary-gradient: linear-gradient(135deg, #e94e67 0%, #f1788a 100%);
+$bg-main: #fcfcfd;
+$text-main: #1a1a1b;
+$text-muted: #6b7280;
+$glass-border: rgba(233, 78, 103, 0.1);
+$shadow-sm: 0 2px 4px rgba(0, 0, 0, 0.02);
+$shadow-md: 0 10px 30px rgba(0, 0, 0, 0.04);
+
+.orders-container {
+  max-width: 900px;
+  margin: 60px auto;
+  padding: 0 25px;
+  font-family: 'Inter', system-ui, -apple-system, sans-serif;
+  animation: fadeIn 0.6s ease-out;
+
+  .orders-title {
+    font-size: 32px;
+    font-weight: 800;
+    letter-spacing: -0.5px;
+    margin-bottom: 40px;
+    color: $text-main;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+
+    &::before {
+      content: '';
+      width: 6px;
+      height: 32px;
+      background: $primary-gradient;
+      border-radius: 10px;
+    }
+  }
+}
+
+.orders-list {
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+}
+
+.order-card {
+  background: #ffffff;
+  border-radius: 20px;
+  padding: 28px;
+  border: 1px solid rgba(0, 0, 0, 0.03);
+  box-shadow: $shadow-md;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  position: relative;
+  overflow: hidden;
+
+  &::after {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; width: 4px; height: 100%;
+    background: $primary-gradient;
+    opacity: 0;
+    transition: opacity 0.3s;
+  }
+
+  &:hover {
+    transform: translateY(-5px) scale(1.01);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.07);
+    
+    &::after {
+      opacity: 1;
+    }
+  }
+
+  .order-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 24px;
+    padding-bottom: 18px;
+    border-bottom: 1px dashed #f0f0f2;
+
+    .order-id {
+      font-weight: 800;
+      font-size: 20px;
+      background: $primary-gradient;
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .order-date {
+      font-size: 14px;
+      font-weight: 500;
+      color: $text-muted;
+      background: #f3f4f6;
+      padding: 6px 12px;
+      border-radius: 20px;
+    }
+  }
+
+  .order-body {
+    display: grid;
+    grid-template-columns: 1.2fr 0.8fr;
+    gap: 40px;
+    margin-bottom: 24px;
+
+    @media (max-width: 640px) {
+      grid-template-columns: 1fr;
+      gap: 20px;
+    }
+
+    strong {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      margin-bottom: 16px;
+      font-size: 14px;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      color: $text-muted;
+    }
+  }
+
+  .order-items {
+    background: #f9fafb;
+    padding: 18px;
+    border-radius: 14px;
+
+    .order-product {
+      font-size: 15px;
+      font-weight: 500;
+      color: $text-main;
+      padding: 8px 0;
+      display: flex;
+      justify-content: space-between;
+      
+      &::before {
+        content: '•';
+        color: $primary-color;
+        margin-right: 8px;
+      }
+
+      border-bottom: 1px solid rgba(0, 0, 0, 0.03);
+
+      &:last-child {
+        border-bottom: none;
+      }
+    }
+  }
+
+  .order-info {
+    p {
+      font-size: 15px;
+      line-height: 1.6;
+      color: #4b5563;
+      margin: 8px 0;
+      display: flex;
+      flex-direction: column;
+
+      span {
+        font-weight: 600;
+        color: $text-main;
+      }
+    }
+  }
+
+  .order-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 10px;
+    padding: 20px;
+    background: linear-gradient(to right, #ffffff, #fff9fa);
+    border-radius: 15px;
+    border: 1px solid $glass-border;
+
+    .order-total-label {
+      font-size: 15px;
+      font-weight: 600;
+      color: $text-muted;
+    }
+
+    .order-total-price {
+      font-size: 24px;
+      font-weight: 900;
+      color: $text-main;
+      
+      &::after {
+        content: ' ₽';
+        font-size: 16px;
+        font-weight: 600;
+      }
+    }
+  }
+}
+
+.orders-empty {
+  text-align: center;
+  padding: 120px 20px;
+  background: #fff;
+  border-radius: 30px;
+  box-shadow: $shadow-md;
+
+  h2 {
+    color: $text-muted;
+    font-size: 20px;
+    font-weight: 600;
+    margin-bottom: 20px;
+  }
+  
+  .go-shop-btn {
+    background: $primary-gradient;
+    color: white;
+    padding: 14px 32px;
+    border-radius: 12px;
+    text-decoration: none;
+    font-weight: 700;
+    transition: box-shadow 0.3s;
+    
+    &:hover {
+      box-shadow: 0 10px 20px rgba(233, 78, 103, 0.3);
+    }
+  }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}

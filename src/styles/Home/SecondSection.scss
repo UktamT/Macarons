@@ -102,23 +102,10 @@
 }
 
 
-@media (max-width: 500px) {
+@media (max-width: 992px) {
   .secondSection {
-    &__content{
-      display: block;
-    }
-
-    .cardFirst{
-      margin-bottom: 20px;
-    }
-    .cardSecond{
-      margin-bottom: 20px;
-    }
-    .cardThird{
-      margin-bottom: 20px;
-    }
-    .cardFourth{
-      margin-bottom: 20px;
+    &__content {
+      justify-content: center; /* Центрируем карточки, если экран будет промежуточным */
     }
   }
 }

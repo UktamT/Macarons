@@ -18,7 +18,7 @@ const onSubmit = async (data: RegisterFormValues) => {
     await registerApi(data)
     setServerError(null)
     alert('Регистрация прошла успешно! Пожалуйста, войдите в систему.')
-    navigate('/')
+    navigate('/signin')
   } catch (error) {
     setServerError('Пользователь с таким email уже существует')
     console.error('Registration error:', error)

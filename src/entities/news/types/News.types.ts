@@ -4,4 +4,6 @@ export interface News {
   subtitle: string;
   image: string;
   date?: string;
+  description: string;
+  hashtags: string[];
 }

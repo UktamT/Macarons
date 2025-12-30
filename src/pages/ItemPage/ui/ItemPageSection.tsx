@@ -2,6 +2,8 @@ import { useProductById } from '../../../entities/product/hooks/useProductById'
 import image1 from '../../../shared/assets/Home/Rectangle 172 (1).png'
 import image2 from '../../../shared/assets/Home/Rectangle 174.png'
 import image3 from '../../../shared/assets/Home/Rectangle 176.png'
+import image4 from '../../../shared/assets/Home/Rectangle 282 (3).png'
+import image5 from '../../../shared/assets/Home/Rectangle 283.png'
 import { Link, useParams } from 'react-router-dom'
 import '../../../styles/ItemPages/itemPageSection.scss'
 import cart from '../../../shared/assets/ItemPage/Group 3.svg'
@@ -13,7 +15,7 @@ export const ItemPageSection = () => {
   const productId = Number(id);
   const cartItems = useCartStore((state) => state.state)
   const { products, loading, error } = useProductById(productId);
-  const images: Record<string, string> = {image1, image2, image3};
+  const images: Record<string, string> = {image1, image2, image3, image4, image5};
     
   if (!id) return <div>Товар не найден</div>;
   if (loading) return <div>Загрузка...</div>;

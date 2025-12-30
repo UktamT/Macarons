@@ -30,12 +30,13 @@ const HeaderBottom = () => {
             modal &&
             <div className="headerBottom__modal">
               <Link onClick={() => setModal(false)} to={'/catalog'}>
-              <p style={{color: 'black'}} className='headerBottom__category'>Каталог Десертов</p>
+              <p className='headerBottom__category'>Каталог Десертов</p>
               </Link>
               
 
+              <Link onClick={() => setModal(false)} to={'/readyKits'}><p className='headerBottom__category'>Готовые наборы</p>
+              </Link>
               
-              <p className='headerBottom__category'>Готовые наборы</p>
               <p className='headerBottom__category'>Трубочки со сгущенкой</p>
               <p className='headerBottom__category'>Эклеры</p>
               <p className='headerBottom__category'>Профитроли</p>

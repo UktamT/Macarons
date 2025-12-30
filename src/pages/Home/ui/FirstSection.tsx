@@ -20,7 +20,7 @@ const FirstSection = () => {
             <h1 className='macaronShop__title'>
               MACARONSHOP
             </h1>
-            <p className='macaronShop__since'>since 2013</p>
+            <p className='macaronShop__since'>─── since 2013 ───</p>
 
             <p className='macaronShop__realLove'>Настоящая любовь</p>
             <p className='macaronShop__subtitle'>Пирожные макарон и другие десерты <br />из натуральных ингредиентов, приготовленные с любовью</p>

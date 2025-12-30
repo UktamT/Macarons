@@ -34,6 +34,12 @@
   flex-direction: column;
   gap: 18px;
 
+  &__error{
+    font-size: 11px;
+    color: red;
+    margin-bottom: 10px;
+  }
+
   &__field {
     display: flex;
     flex-direction: column;

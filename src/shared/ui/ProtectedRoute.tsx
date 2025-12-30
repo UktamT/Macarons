@@ -1,5 +1,5 @@
 import type { ReactElement } from 'react'
-import { Link } from 'react-router-dom'
+import Error from './Error'
 
 type Props = { children: ReactElement }
 
@@ -9,8 +9,7 @@ export default function ProtectedRoute({ children }: Props) {
   if (!token) {
     return (
       <div style={{padding:20, textAlign:'center'}}>
-        <h2>Доступ запрещён</h2>
-        <p>У вас нет доступа к этой странице. Пожалуйста, <Link to="/signin">войдите</Link> или <Link to="/signup">зарегистрируйтесь</Link>.</p>
+        <Error/>
       </div>
     )
   }

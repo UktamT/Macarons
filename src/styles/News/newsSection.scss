@@ -6,6 +6,7 @@
     line-height: 37px;
     letter-spacing: 0%;
     text-align: left;
+    padding-bottom: 40px;
   }
   &__subtitle{
     color: rgba(41, 41, 41, 1);
@@ -16,4 +17,34 @@
     text-align: left;
     width: 567px;
   }
+  &__content{
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+  }
+  &__image{
+    width: 570px;
+    height: 450px;
+  }
+
+  &__hashtags{
+    display: flex;
+    align-self: center;
+    gap: 10px;
+    margin-bottom: 20px;
+  }
+  &__hashtag {
+    display: inline-block;
+    background: rgba(247, 235, 229, 1);
+    color: rgba(41, 41, 41, 0.83);
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 17px;
+    padding: 10px 30px 10px 15px;
+    clip-path: polygon(0% 0%, 85% 0%, 100% 50%, 85% 100%, 0% 100%);
+    border-top-left-radius: 4px;
+    border-bottom-left-radius: 4px;
+    margin-right: 10px;
+    margin-bottom: 5px;
+}
 }
